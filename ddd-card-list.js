@@ -68,14 +68,22 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         margin: var(--ddd-spacing-2); 
-        padding: var(--ddd-spacing-4);
-        
+       
+        padding-left: var(--ddd-spacing-8);
+        padding-right: var(--ddd-spacing-8);
       }
       h3 span {
         font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
       }
       div ::slotted(*){
         display: inline-block;
+      }
+      @media screen and (max-width: 900px){
+        .wrapper{
+          padding-left: 0;
+          padding-right: 0;
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
     `];
   }

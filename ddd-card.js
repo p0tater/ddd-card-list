@@ -72,7 +72,11 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
   static get styles() {
     return [super.styles,
     css`
+
+      
+
       :host {
+        margin: var(--ddd-spacing-1);
         color: var(--ddd-theme-primary);
         background-color: var(--ddd-theme-accent);
         font-family: var(--ddd-font-navigation);
@@ -95,34 +99,33 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
         border: var(--ddd-border-xs); 
         border-radius: var(--ddd-radius-sm);
         background-color: var(--ddd-accent-6);
+        box-shadow: 0px 4px 8px 0px #00032120;
            }
-
-    
       
       img {
         width: 100%;
         border-top-left-radius: var(--ddd-radius-sm);
         border-top-right-radius: var(--ddd-radius-sm);
-      }
-      h1 p{
-        font-family: var(---ddd-font-primary); //Roboto
-        font-size: var(--ddd-font-size-xxs);
-        font-weight: var(--ddd-font-weight-regular);
-        
+        max-width: 425px;
       }
       p{
         color: var(--ddd-theme-default-coalyGray);
+        font-family: var(--ddd-font-primary); 
+        font-size: var(--ddd-font-size-3xs);
+        font-weight: var(--ddd-font-weight-regular);
+        letter-spacing: var(--ddd-ls-36-sm);
+        height: 115px;
+        line-height:150%;
       }
       h1 {
-        font-size: var(--ddd-font-size-m); //perfect size
-        font-weight: var(--ddd-font-weight-regular);
+        font-size: var(--ddd-font-size-ms); 
+        font-weight: var(--ddd-font-weight-bold);
         margin: 0;
         margin-bottom: var(--ddd-spacing-2);
         color: var(--ddd-theme-default-nittanyNavy);
+        font-family: var(--ddd-font-primary);
       }
-      p{
-        height: 100px;
-      }
+     
       .accent{
         border-top-left-radius: var(--ddd-radius-sm);
         border-top-right-radius: var(--ddd-radius-sm);
@@ -132,11 +135,46 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
       }
 
       .container {
-        margin: var(--ddd-spacing-4); 
+        margin-bottom: var(--ddd-spacing-6); 
+        margin-top: var(--ddd-spacing-4);
+        margin-left: var(--ddd-spacing-4);
+        margin-right: var(--ddd-spacing-4);
       }
-      button{
-        background-color: var(--ddd-theme-default-beaverBlue);
+      .button{
+        padding: var(--ddd-spacing-4) var(--ddd-spacing-6);
+        border-radius: var(--ddd-radius-xs);
+        font-family: var(--ddd-font-primary); 
+        font-size: var(--ddd-font-size-4xs);
+        border:none;
+        font-weight: var(--ddd-font-weight-bold);
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        background-color: var(--ddd-theme-default-link)  !important ;
+        color: var(--ddd-theme-default-white) !important;
       }
+      a:hover {
+        background-color: var(--ddd-theme-default-nittanyNavy) !important;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+      }
+      @media screen and (max-width: 900px){
+        .card{
+          max-width: unset;
+        }
+
+        p{
+          font-size: var(--ddd-font-size-4xs);
+        }
+
+
+    } 
+    @media screen and (max-width: 1300px){
+          p{
+            display: contents;
+          }
+        }
       
     `];
   }
@@ -232,8 +270,7 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
   <div class="container">
     <h1>${this.campus}</h1>
     <p>${this.description}</p>
-    <button>Explore ></button>
-    <span class="ddd Primary-0 large"></span>
+    <a class="button" href="${this.link}">Explore ></a>
   </div>
 </div>`;
   }
