@@ -21,24 +21,19 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
 
   updated(changedProperties) {
     super.updated(changedProperties);
-    if(changedProperties.has("dddaccent")){
-      this.colorChange();
-      console.log(this.dddaccent);
+    if(changedProperties.has("dataprimary")){
+      console.log(this.dataprimary);
+
     }
   }
 
-  colorChange() {
-    //change number of accent color to inside of var(--ddd-theme-${this.dddaccent})
-    
-    
-  }
 
 
   constructor() {
     super();
     this.title = "";
-    this.dddaccent = "";
-    this.dddprimary = "";
+    this.dataaccent = "";
+    this.dataprimary = "";
     this.registerLocalization({
       context: this,
       localesPath:
@@ -52,11 +47,11 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
   static get properties() {
     return {
       ...super.properties,
-      title: { type: String, reflect: true },
-      dddaccent: { type: String, reflect: true, attribute: "ddd-accent" },
-      dddprimary: { type: String, reflect: true, attribute: "ddd-primary" },
+      dataaccent: { type: String, reflect: true, attribute: "data-accent" },
+      dataprimary: { type: String, reflect: true, attribute: "data-primary" },
     };
   }
+
 
   // Lit scoped styles
   static get styles() {
@@ -85,11 +80,11 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
     `];
   }
 
-  // Lit render the HTML
+  // Lit render the HTML style="background-color: var(--ddd-primary-${this.dataaccent});"
   render() {
     return html`
-<div class="wrapper" style="background-color: var(--ddd-primary-${this.dddaccent});" >
-  <slot>
+<div class="wrapper">
+  <slot style="background-color var(--ddd-primary-${this.dataprimary});">
   </slot>
 </div>`;
   }

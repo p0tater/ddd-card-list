@@ -14,6 +14,9 @@ import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 
 export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
 
+  
+
+
 
   static get tag() {
     return "ddd-card";
@@ -27,6 +30,29 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
     this.link = "";
     this.description = "";
     this.dddprimary = "2";
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    const cardList = document.querySelector('ddd-card-list');
+    if (cardList) {
+      
+      const observer = new MutationObserver((mutationsList) => {
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'data-primary') {
+            this.colorChange(cardList.getAttribute('data-primary'));
+          }
+        }
+      });
+      observer.observe(cardList, { attributes: true });
+    }
+  }
+
+  colorChange(newValue) {   
+    const accentDiv = this.shadowRoot.querySelector('.accent');
+    if (accentDiv) {
+      this.dddprimary = "" + newValue;
+    }
   }
 
   // Lit reactive properties
@@ -100,7 +126,9 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
       .accent{
         border-top-left-radius: var(--ddd-radius-sm);
         border-top-right-radius: var(--ddd-radius-sm);
-        
+        border-bottom: var(--ddd-border-lg);
+        border-bottom-width: 12px;
+        display: flex;
       }
 
       .container {
@@ -198,7 +226,7 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
   render() {
     return html`    
 <div class="card">
-  <div class="accent" style="background-color: var(--ddd-primary-${this.dddprimary});">
+  <div class="accent" style="border-color: var(--ddd-primary-${this.dddprimary});">
     <img src="${this.image}" alt="placeholder"/> 
   </div>
   <div class="container">
