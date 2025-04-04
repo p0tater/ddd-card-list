@@ -125,12 +125,11 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
         color: var(--ddd-theme-default-nittanyNavy);
         font-family: var(--ddd-font-primary);
       }
-     
       .accent{
         border-top-left-radius: var(--ddd-radius-sm);
         border-top-right-radius: var(--ddd-radius-sm);
         border-bottom: var(--ddd-border-lg);
-        border-bottom-width: var(--ddd-border-size-lg);
+        border-bottom-width: 12px;
         display: flex;
       }
 
@@ -162,6 +161,7 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
       @media screen and (max-width: 900px){
         .card{
           max-width: unset;
+          height:fit-content;
         }
 
         p{
