@@ -99,7 +99,7 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
         border: var(--ddd-border-xs); 
         border-radius: var(--ddd-radius-sm);
         background-color: var(--ddd-accent-6);
-        box-shadow: 0px 4px 8px 0px #00032120;
+        box-shadow: var(--ddd-boxShadow-md);
            }
       
       img {
@@ -115,12 +115,12 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
         font-weight: var(--ddd-font-weight-regular);
         letter-spacing: var(--ddd-ls-36-sm);
         height: 115px;
-        line-height:150%;
+        line-height: var(--ddd-lh-150);
       }
       h1 {
         font-size: var(--ddd-font-size-ms); 
         font-weight: var(--ddd-font-weight-bold);
-        margin: 0;
+        margin: var(--ddd-spacing-0);
         margin-bottom: var(--ddd-spacing-2);
         color: var(--ddd-theme-default-nittanyNavy);
         font-family: var(--ddd-font-primary);
@@ -130,7 +130,7 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
         border-top-left-radius: var(--ddd-radius-sm);
         border-top-right-radius: var(--ddd-radius-sm);
         border-bottom: var(--ddd-border-lg);
-        border-bottom-width: 12px;
+        border-bottom-width: var(--ddd-border-size-lg);
         display: flex;
       }
 
@@ -145,7 +145,7 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
         border-radius: var(--ddd-radius-xs);
         font-family: var(--ddd-font-primary); 
         font-size: var(--ddd-font-size-4xs);
-        border:none;
+        border: var(--ddd-border-xs);
         font-weight: var(--ddd-font-weight-bold);
         display: block;
         text-align: center;

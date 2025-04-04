@@ -80,8 +80,8 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
       }
       @media screen and (max-width: 900px){
         .wrapper{
-          padding-left: 0;
-          padding-right: 0;
+          padding-left: var(--ddd-spacing-0);
+          padding-right: var(--ddd-spacing-0);
           grid-template-columns: repeat(2, 1fr);
         }
       }
