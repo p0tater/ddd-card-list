@@ -101,12 +101,16 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
         background-color: var(--ddd-accent-6);
         box-shadow: var(--ddd-boxShadow-md);
            }
-      
+      .content {
+
+        margin:0;
+      }
+
       img {
         width: 100%;
         border-top-left-radius: var(--ddd-radius-sm);
         border-top-right-radius: var(--ddd-radius-sm);
-        max-width: 425px;
+        max-width: 500px;
       }
       p{
         color: var(--ddd-theme-default-coalyGray);
@@ -114,8 +118,9 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
         font-size: var(--ddd-font-size-3xs);
         font-weight: var(--ddd-font-weight-regular);
         letter-spacing: var(--ddd-ls-36-sm);
-        height: 115px;
+        height: 119px;
         line-height: var(--ddd-lh-150);
+        margin-top: 0;
       }
       h1 {
         font-size: var(--ddd-font-size-ms); 
@@ -139,6 +144,7 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
         margin-left: var(--ddd-spacing-4);
         margin-right: var(--ddd-spacing-4);
       }
+   
       .button{
         padding: var(--ddd-spacing-4) var(--ddd-spacing-6);
         border-radius: var(--ddd-radius-xs);
@@ -158,23 +164,36 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
         transition: background-color 0.3s ease;
         text-decoration: none;
       }
-      @media screen and (max-width: 900px){
+      @media screen and (max-width: 1000px) {
         .card{
           max-width: unset;
-          height:fit-content;
         }
 
         p{
           font-size: var(--ddd-font-size-4xs);
         }
+        .content {
+        height: 175px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+         }
 
+       
 
     } 
     @media screen and (max-width: 1300px){
           p{
             display: contents;
           }
+          .content {
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+         }
         }
+        
       
     `];
   }
@@ -269,8 +288,10 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
   </div>
   <div class="container">
     <h1>${this.campus}</h1>
-    <p>${this.description}</p>
-    <a class="button" href="${this.link}">Explore ></a>
+    <div class="content">
+      <p>${this.description}</p>
+      <a class="button" href="${this.link}">Explore ></a>
+    </div>
   </div>
 </div>`;
   }

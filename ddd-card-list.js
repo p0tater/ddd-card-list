@@ -78,7 +78,7 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
       div ::slotted(*){
         display: inline-block;
       }
-      @media screen and (max-width: 900px){
+      @media screen and (max-width: 1100px){
         .wrapper{
           padding-left: var(--ddd-spacing-0);
           padding-right: var(--ddd-spacing-0);
