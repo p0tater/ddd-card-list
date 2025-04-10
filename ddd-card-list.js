@@ -85,6 +85,11 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
           grid-template-columns: repeat(2, 1fr);
         }
       }
+      @media screen and (max-width: 775px){
+        .wrapper {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
     `];
   }
 

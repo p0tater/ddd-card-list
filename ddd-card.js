@@ -110,7 +110,6 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
         width: 100%;
         border-top-left-radius: var(--ddd-radius-sm);
         border-top-right-radius: var(--ddd-radius-sm);
-        max-width: 500px;
       }
       p{
         color: var(--ddd-theme-default-coalyGray);
@@ -164,7 +163,23 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
         transition: background-color 0.3s ease;
         text-decoration: none;
       }
-      @media screen and (max-width: 1000px) {
+    
+      
+
+
+    @media screen and (max-width: 1300px){
+          p{
+            display: contents;
+          }
+          .content {
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+         }
+        }
+
+        @media screen and (max-width: 1000px) {
         .card{
           max-width: unset;
         }
@@ -179,19 +194,11 @@ export class DddCard extends DDDPulseEffectSuper(I18NMixin((DDD))) {
         justify-content: space-between;
          }
 
-       
-
-    } 
-    @media screen and (max-width: 1300px){
-          p{
-            display: contents;
-          }
-          .content {
-        height: 250px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-         }
+    }    
+    @media screen and (max-width: 775px){
+       .content{
+        height: 130px;
+       }
         }
         
       
